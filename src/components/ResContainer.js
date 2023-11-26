@@ -1,5 +1,5 @@
-// import { resArr } from "../utils/mockData";
-import ResCard, { withPromotedLabel } from "./Rescard";
+import { resArr } from "../utils/mockData";
+import ResCard, { withRatedLabel } from "./ResCard";
 import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import StatusError from "./StatusError";
@@ -16,7 +16,7 @@ const ResContainer = () => {
   const [errorRender, setErrorrender] = useState("");
   const onlineStatus = useOnlineStatus();
 
-  const RestCardPromoted = withPromotedLabel(ResCard);
+const RatedLabelCard = withRatedLabel(ResCard);
 
   const {myName, setMyName} = useContext(MyContext)
   
@@ -46,6 +46,9 @@ const ResContainer = () => {
         json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
+
+      
+
     } catch (err) {
       console.log(typeof err);
       setErrorrender(err.message);
@@ -56,7 +59,7 @@ const ResContainer = () => {
   //   if(listOfRests.length===0){
   //     return <Shimmer />
   //    }
-  // console.log(filteredList);
+  console.log(filteredList);
 
   if (onlineStatus === false) {
     return <NetworkError />;
@@ -116,7 +119,7 @@ const ResContainer = () => {
           return (
             <Link to={"/restaurants/" + rest?.info?.id} key={rest?.info?.id}>
               {rest.info.avgRating >= 4.1 ? (
-                <RestCardPromoted resData={rest} />
+                <RatedLabelCard resData={rest} />
               ) : (
                 <ResCard resData={rest} />
               )}

@@ -9,8 +9,3 @@ test("Sum function should calculate the sum", () => {
 
 });
 
-test("hello", ()=>{
-  const res = sum(5,5);
-
-  expect(res).toBe(10);
-})

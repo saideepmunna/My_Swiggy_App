@@ -25,7 +25,7 @@ const ResCard = (props) => {
   );
 };
 
-export const withPromotedLabel = ()=>{
+export const withRatedLabel = ()=>{
   return (props)=>{
     return(
       <div>
