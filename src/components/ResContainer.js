@@ -7,13 +7,12 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import NetworkError from "./NetworkError";
 import MyContext from "../utils/MyContext";
-import { useContext } from "react";
 
 const ResContainer = () => {
   const [listOfRests, setListOfrests] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [searchTextBtn, setSearchTextBtn] = useState("");
-  const [errorRender, setErrorrender] = useState("");
+  const [errorRender, setErrorrender] = useState(false);
   const onlineStatus = useOnlineStatus();
 
 const RatedLabelCard = withRatedLabel(ResCard);
@@ -51,7 +50,7 @@ const RatedLabelCard = withRatedLabel(ResCard);
 
     } catch (err) {
       console.log(typeof err);
-      setErrorrender(err.message);
+      setErrorrender(true);
     }
   };
 
@@ -74,6 +73,7 @@ const RatedLabelCard = withRatedLabel(ResCard);
       <div className="flex">
         <div className="flex justify-between m-4">
           <input
+            data-testid="searchInput"
             className="border-solid border-2 border-sky-500 p-1 rounded-lg mx-2 "
             value={searchTextBtn}
             onChange={(e) => {
