@@ -23,7 +23,7 @@ const RestaurantMenuPage = () => {
   const { name, cuisines, costForTwoMessage } =
     resInfo?.cards[0]?.card?.card?.info;
   // const {itemCards} = resInfo;
-  console.log(resInfo)
+  // console.log(resInfo)
 
   const menuCard = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
@@ -37,6 +37,7 @@ const RestaurantMenuPage = () => {
   });
 
   // console.log(foodMenu);
+  
 
   return (
     <div className="w-7/12 mx-auto">

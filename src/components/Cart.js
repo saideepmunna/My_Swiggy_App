@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 const Cart = () => {
   const cartDishes = useSelector((store) => store.cart.items);
   const resInfo = useSelector((store) => store.cart.basicResInfo);
-  console.log(resInfo);
-  console.log(cartDishes);
+  // console.log(resInfo);
+  // console.log(cartDishes);
   return (
     cartDishes.length===0?(<div className="text-center font-semibold">
       <h1>Your cart is empty. Please add items.</h1>
@@ -18,7 +18,7 @@ const Cart = () => {
       <div className="w-5/12 mx-auto bg-slate-200 p-4">
         {cartDishes.map((item) => {
           return (
-            <div className="flex justify-between m-2">
+            <div data-testid="cartItem" className="flex justify-between m-2">
               <h1 key={item?.card?.info?.id}>{item?.card?.info?.name}</h1>
               <h1>
                 ₹

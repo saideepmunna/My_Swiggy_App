@@ -14,6 +14,7 @@ const ItemList = ({ items }) => {
       {items.map((item) => (
         // const { id,name, price, description, imageId } = item?.card?.info;
         <div
+          data-testid="foodItem"
           key={item.card.info.id}
           className="border-b-2 border-gray-400 py-3 px-0 flex align-middle"
         >
@@ -37,6 +38,7 @@ const ItemList = ({ items }) => {
 
               <div className="absolute top-1 px-4 py-1 bg-white text-green-500 font-semibold border-solid border-2 border-slate-300 rounded-md">
                 <button
+                 data-testid="addBtn"
                   onClick={() => {
                     handlerItem(item);
                   }}
@@ -48,6 +50,7 @@ const ItemList = ({ items }) => {
           ) : (
             <div className=" px-4 py-1 h-10 bg-white text-green-500 font-semibold border-solid border-2 border-slate-300 rounded-md">
               <button
+                data-testid="addBtn"
                 onClick={() => {
                   handlerItem(item);
                 }}

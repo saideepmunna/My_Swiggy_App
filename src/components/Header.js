@@ -11,7 +11,7 @@ let Header = () => {
   const { myName } = useContext(MyContext);
   const cartItems = useSelector((store)=>store.cart.items)
   // console.log(cartItems)
-  console.log(myName);
+  // console.log(myName);
   return (
     
     <div className="flex justify-between">
@@ -34,7 +34,7 @@ let Header = () => {
         <li className="m-4 font-semibold">
           <Link to={"/grocery"}>Instamart</Link>
         </li>
-        <li className="m-4 font-semibold text-lg">
+        <li data-testid="cartBtn" className="m-4 font-semibold text-lg">
           <Link to={"/cart"}>🛒cart({cartItems.length})</Link>
         </li>
         <li

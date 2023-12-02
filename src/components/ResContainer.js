@@ -27,7 +27,7 @@ const RatedLabelCard = withRatedLabel(ResCard);
   const fetchData = async () => {
     try {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5912716&lng=73.73890899999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.499242738250082&lng=78.3971131592989&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
         );
       if (data.status != 200) {
         throw new Error("Unable to fetch data");
@@ -58,7 +58,7 @@ const RatedLabelCard = withRatedLabel(ResCard);
   //   if(listOfRests.length===0){
   //     return <Shimmer />
   //    }
-  console.log(filteredList);
+  // console.log(filteredList);
 
   if (onlineStatus === false) {
     return <NetworkError />;
@@ -95,6 +95,7 @@ const RatedLabelCard = withRatedLabel(ResCard);
           </button>
 
           <button
+          data-testid="filterButton"
             className="ml-36 bg-purple-300 px-2 rounded-lg "
             onClick={() => {
               const filteredListItems = listOfRests.filter((restaurant) => {

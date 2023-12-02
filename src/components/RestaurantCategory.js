@@ -14,7 +14,7 @@ const expandItems = ()=>{
   return (
     <div>
       <div className="border-b-[15px] border-slate-200">
-        <div className="flex justify-between mx-3 my-4 cursor-pointer"  onClick={expandItems}>
+        <div className="flex justify-between mx-3 my-4 cursor-pointer" data-testid="foodCategory" onClick={expandItems}>
           <h3 className="font-bold text-lg text-slate-800">
             {title}({itemCards.length})
           </h3>
